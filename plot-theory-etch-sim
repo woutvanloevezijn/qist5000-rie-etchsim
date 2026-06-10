@@ -1,0 +1,23 @@
+from etchsim.structure import Structure
+from etchsim.surface import Surface
+
+# necessary for parallel processing
+if __name__ == "__main__":
+    
+    resolution = 200
+        
+    etch_rates = ([200,50])
+    heights = ([1000])
+    sigma = 5.7
+    
+    surface = Surface([(0,1500),(400,1500),(200,1000),(300,900),(500,600),
+             (600,650),(700,500),(900,1000),(800,1700),(900,1700),
+             (1000,1500),(1200,1300),(1400,800),(1500,700),(1600,900),
+             (1800,1200),(2000,1300)], resolution)
+    structure = Structure(surface, etch_rates, heights, 1, sigma)
+    
+    structure.plot()
+    structure.step(True)
+
+    structure.show()
+    
