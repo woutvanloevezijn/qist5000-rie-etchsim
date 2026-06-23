@@ -17,12 +17,12 @@ class Structure:
         Initialize structure to simulate its surface being etched over time.
 
         Args:
-            surface (Surface):      2D contour of the cross-section of a structure.
+            surface (Surface):      2D contour map of the cross-section of a structure.
             resolution (float):     Minimum simulated feature size (nm).
             etch_rates ([float]):   Vertical etch rates of a horizontal surface for different materials,
                                         starting from the bottom most material of the stack to the top (nm/s).
             time_step (float):      Time step of each simulated etching iteration (s).
-            heights ([float]):      Vertical height of each material boundaryo of the stack, starting from the
+            heights ([float]):      Vertical height of each material boundary of the stack, starting from the
                                         bottom most material boundary to the top (nm).
             sigma (float):          Angular spread of the ion flux distribution at the surface of the stucture (degrees).
             nr_of_processes:        Number of proccesses used for parallel processing. Defaults at 6.

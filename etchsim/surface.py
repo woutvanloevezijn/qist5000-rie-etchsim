@@ -49,7 +49,7 @@ class Surface:
     
     def size(self):
         """
-        Amount of nodes in the surface.
+        Return the amount of nodes in the surface.
         """
         n = 0
         for _ in self:
@@ -58,7 +58,7 @@ class Surface:
     
     def copy(self):
         """
-        Deep copy of the surface.
+        Make a deep copy of the surface.
         """
         points = [] 
         for node in self:
