@@ -23,6 +23,8 @@ The etching can then be simulated for a single time step `Structure.step()` or a
 
 `etch-sim-example.py` shows a simple example for a structure being etched.
 
+For parameter optimization for `sigma` the `Surface.compare(other)` function can be used as a fitness function to see how close a simulated etched surface is to an experimental one. 
+
 ## Class structure
 
 ### Structure
@@ -41,7 +43,7 @@ A `Surface` holds a doubly linked list of `Nodes`, describing the current state 
 Methods of this class include: 
 - `size()`: Return the amount of nodes in the surface.
 - `copy()`: Make a deep copy of the surface.
-- `compare(other, range, domain)`: Average squared distance between nodes of two surfaces in a given range and domain.
+- `compare(other, range, domain)`: Average squared distance between nodes of two surfaces in a given range and domain. Can be used as a fitness function which describes how close a simulated surface with parameter `sigma` is to experimental results.
 - `restructure(resolution)`: Ensure a maximum distance equal to the resolution is kept between two adjacent nodes and a minimum distance of half the resolution. Nodes are added and removed in order to keep the inter-node distance and overall shape consistent within bounds of the resolution.
 - `save(filename)`: Save all points of the surface in a csv-file at the given location.
 - <u>`load(filename)`</u>: Load surface object straight from a csv-file at the specified location.
